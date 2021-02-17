@@ -1,7 +1,7 @@
 extends Control
 
 func _ready():
-	var prompts = ["David", "Minions", "Greatest"]
-	var story = "Once upon a time %s watched %s and thought it was the %s movie of the past two decades"
+	var prompts = ["Dylan", "hates", "tomatoes", "strange", "fried tomato with onions", "delicious"]
+	var story = "My friend %s %s %s, which is %s, since he used to think %s is %s"
 	
 	print(story % prompts)
