@@ -5,3 +5,4 @@ func _ready():
 	var story = "My friend %s %s %s, which is %s, since he used to think %s is %s"
 	
 	print(story % prompts)
+ 
