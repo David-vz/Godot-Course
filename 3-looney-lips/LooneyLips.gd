@@ -11,13 +11,17 @@ onready var DisplayText = $VBoxContainer/DisplayText
 func _ready():
 	display_introduction()
 	check_player_words_length()
+	PlayerText.grab_focus()
 
 func _on_PlayerText_text_entered(new_text):
 	add_to_player_words()
 
 func _on_TextureButton_pressed():
-	add_to_player_words()
-	pass
+	
+	if is_story_done():
+		get_tree().reload_current_scene()
+	else:
+		add_to_player_words()	
 	
 func display_introduction():
 	DisplayText.text = "Welcome to game of madlibs! You'll be prompted to add specific types of words in the input below and when done you'll be shown a funny story.   "
@@ -39,9 +43,13 @@ func is_story_done():
 	
 func check_player_words_length():
 	if is_story_done():
-		tell_story()
+#		tell_story()
+		end_game()
+		
+			
 	else:
 		prompt_player()
+#		tell_story()
 	
 func tell_story():
 	DisplayText.text = story % player_words
@@ -49,3 +57,9 @@ func tell_story():
 
 func prompt_player():
 	DisplayText.text += "May I have " + prompts[player_words.size()] + " please?"
+	
+func end_game():
+	PlayerText.queue_free()
+	$VBoxContainer/HBoxContainer/Label.text = 'Again!'
+	tell_story()
+	pass
