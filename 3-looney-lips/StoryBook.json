@@ -1,0 +1,10 @@
+[
+	{
+	"prompts":["a name", "a way you feel about something (verb)", "noun", "adjective", "noun", "adjective"],
+	"story":"My friend %s %s %s, which is %s, since he used to think %s is %s"
+	},
+	{
+	"prompts":["a name", "adjective", "noun", "pronoun (he/she/them/they/it)", "verb", "adjective"],
+	"story":"Once upon a time, %s, the %s %s decided that %s wanted to %s, because it is %s"
+	},
+]
